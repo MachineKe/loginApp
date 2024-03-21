@@ -1,0 +1,11 @@
+{
+  "appId": "com.loginapp.app",
+  "appName": "loginApp",
+  "bundledWebRuntime": false,
+  "webDir": "dist",
+  "plugins": {
+    "SplashScreen": {
+      "launchShowDuration": 0
+    }
+  }
+}

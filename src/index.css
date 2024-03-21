@@ -1,0 +1,132 @@
+.container {
+  max-width: 800px;
+  margin: 0 auto;
+  padding: 20px;
+  background-color: #fff; /* White */
+  border-radius: 10px;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+}
+
+h1 {
+  font-size: 24px;
+  text-align: center;
+  color: #6a0dad; /* Purple */
+}
+
+p {
+  font-size: 18px;
+  text-align: center;
+}
+
+.logo2 {
+  display: flex;
+  align-items: center;
+}
+
+.nameLogo {
+  margin-left: 5px;
+}
+
+.link {
+  color: #6a0dad; /* Purple */
+}
+
+/* Responsive styles */
+@media (max-width: 600px) {
+  .container {
+    padding: 10px;
+  }
+
+  h1 {
+    font-size: 20px;
+  }
+
+  p {
+    font-size: 16px;
+  }
+}
+
+/* General styles for register and login containers */
+.registerContainer,
+.loginContainer {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+  /* background-color: #6a0dad;  */
+}
+
+.registerChild,
+.loginChild {
+  width: 100%;
+  max-width: 400px;
+  background-color: white;
+  padding: 20px;
+  border-radius: 10px;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+}
+
+.inputDiv {
+  margin-bottom: 10px;
+}
+
+.inputDiv label {
+  color: #6a0dad; /* Purple */
+}
+
+.inputDiv input[type="text"],
+.inputDiv input[type="email"],
+.inputDiv input[type="password"] {
+  width: 92%;
+  padding: 10px;
+  border: 1px solid #6a0dad; /* Purple */
+  border-radius: 5px;
+}
+
+.buttonDiv {
+  text-align: center;
+  margin-top: 20px;
+}
+
+.registerButton,
+.loginButton {
+  background-color: #6a0dad; /* Purple */
+  color: white;
+  padding: 10px 20px;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+}
+
+.end {
+  text-align: center;
+  margin-top: 20px;
+}
+
+.errorDiv {
+  margin-top: 20px;
+  background-color: #ffcccc; /* Light red */
+  padding: 10px;
+  border-radius: 5px;
+}
+
+.errorDiv ul {
+  list-style: none;
+  padding: 0;
+}
+
+.errorDiv li {
+  color: red;
+}
+
+
+.about {
+  color: red;
+}
+
+.loadingImg {
+width:80px;
+height: 80px;
+margin-top: 200px;
+margin-left: 140px;
+}
