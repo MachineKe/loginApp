@@ -16,7 +16,7 @@ const Home = () => {
     <>
       {user ? (
         <div className="container">
-          <h1>Login App</h1>
+          <h1>Mark's Login App</h1>
           <p>Welcome {user.username}!</p>
              <Link to="" className="link" onClick={handleLogout}>
               <div className="logo2">
