@@ -4,6 +4,8 @@ module.exports.validateRegisterInput = (
   username,
   email,
   phone,
+  yob,
+  gender,
   password,
   confirmPassword
 ) => {
@@ -11,6 +13,13 @@ module.exports.validateRegisterInput = (
 
   if (username.trim() === "") {
     errors.username = "Username must not be empty";
+  }
+  if (yob.trim() === "") {
+    errors.yob = "YOB must be selected";
+  }
+
+  if (gender.trim() === "") {
+    errors.gender = "Gender must be selected";
   }
 
   if (phone.trim() === "") {

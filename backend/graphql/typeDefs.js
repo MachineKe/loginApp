@@ -6,6 +6,8 @@ type User {
   email: String!
   token: String!
   username: String!
+  # yob: Int!
+  gender: String!
   createdAt: String!
   phone: String!
 }
@@ -14,6 +16,8 @@ input RegisterInput {
   username: String!
   password: String!
   confirmPassword: String!
+  # yob: Int!
+  gender: String!
   email: String!
   phone: String!
 }

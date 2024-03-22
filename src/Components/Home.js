@@ -18,6 +18,8 @@ const Home = () => {
         <div className="container">
           <h1>Mark's Login App</h1>
           <p>Welcome {user.username}!</p>
+          <p>{user.email}</p>
+          <p>{user.gender}</p>
              <Link to="" className="link" onClick={handleLogout}>
               <div className="logo2">
                 <MdOutlineExitToApp />

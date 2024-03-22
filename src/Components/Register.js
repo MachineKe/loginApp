@@ -15,6 +15,8 @@ const Register = () => {
     phone: "",
     password: "",
     confirmPassword: "",
+    gender: "", 
+    // yob: "",    
   });
 
   const [addUser, { loading }] = useMutation(REGISTER_USER, {
@@ -27,6 +29,16 @@ const Register = () => {
     },
     variables: values,
   });
+
+  if (loading) {
+    return (
+      <div>
+        <img className="loadingImg" src="https://cdn.pixabay.com/animation/2023/10/08/03/19/03-19-26-213_512.gif" />
+                <h1>Loading ...</h1>
+      </div>
+    );
+  }
+
 
   function registerUser() {
     addUser();
@@ -62,7 +74,7 @@ const Register = () => {
               onChange={onChange}
             />
           </div>
-           <div className="inputDiv">
+          <div className="inputDiv">
             <label>Phone</label>
             <input
               className="registerInput"
@@ -98,6 +110,46 @@ const Register = () => {
               onChange={onChange}
             />
           </div>
+          <div className="inputDiv">
+            <label>Gender</label>
+            <div>
+              <label>
+                <input
+                  type="radio"
+                  name="gender"
+                  value="Male"
+                  checked={values.gender === "Male"}
+                  onChange={onChange}
+                />{" "}
+                Male
+              </label>
+              <label>
+                <input
+                  type="radio"
+                  name="gender"
+                  value="Female"
+                  checked={values.gender === "Female"}
+                  onChange={onChange}
+                />
+                Female
+              </label>
+            </div>
+          </div>
+          {/* Year of Birth Selection */}
+          {/* <div className="inputDiv">
+            <label>Year of Birth</label>
+            <select
+              className="registerInput"
+              name="yob"
+              value={values.yob}
+              onChange={onChange}
+            >
+              <option value="">Select Year</option>
+              {Array.from({length: new Date().getFullYear() - 1899}, (_, i) => 1900 + i).map((year) => (
+                <option key={year} value={year}>{year}</option>
+              ))}
+            </select>
+          </div> */}
           <div className="buttonDiv">
             <button className="registerButton" type="submit">
               Register
@@ -131,6 +183,8 @@ const REGISTER_USER = gql`
     $phone: String!
     $password: String!
     $confirmPassword: String!
+    $gender: String!   
+    # $yob: Int!         
   ) {
     register(
       registerInput: {
@@ -139,12 +193,15 @@ const REGISTER_USER = gql`
         phone: $phone
         password: $password
         confirmPassword: $confirmPassword
+        gender: $gender   
+        # yob: $yob         
       }
     ) {
       id
       email
       phone
       username
+      gender
       createdAt
       token
     }

@@ -7,6 +7,8 @@ query {
     username
     phone
     email
+    yob
+    gender
     createdAt
   }
 }
