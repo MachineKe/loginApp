@@ -13,6 +13,8 @@ import Login from "./Components/Login";
 import Register from "./Components/Register";
 
 import About from "./Components/About";
+import Catalog from "./Components/Catalog/Catalog";
+import Pizza from "./Components/Pizza/Pizza";
 
 loadDevMessages();
 loadErrorMessages();
@@ -51,6 +53,8 @@ function App() {
                             <Route path="/login" element={<Login/>} />
               <Route path="/register" element={<Register />} />
               <Route path="/about" element={<About/>}/>
+              <Route path="/catalog" element={<Catalog />} />
+                           <Route path="/pizza" element={<Pizza/>}/>
 
             </Routes>
           </ErrorBoundary>

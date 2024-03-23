@@ -4,11 +4,14 @@ import { useMutation } from "@apollo/react-hooks";
 import gql from "graphql-tag";
 import { useForm } from "./util/Hooks";
 import { AuthContext } from "./Context/auth";
+import { BiHide } from "react-icons/bi";
+import { BiShow } from "react-icons/bi";
 
 const Login = () => {
   const context = useContext(AuthContext);
   const navigate = useNavigate();
   const [errors, setErrors] = useState({});
+    const [showPassword, setShowPassword] = useState(false);
   const { onChange, onSubmit, values } = useForm(loginUserCallBack, {
     username: "",
     password: "",
@@ -61,12 +64,20 @@ const Login = () => {
             <input
               className="loginInput"
               placeholder="Password"
-              type="password"
+              type={showPassword ? "text" : "password"}
               required
               name="password"
               value={values.password}
               onChange={onChange}
             />
+                        <button
+              className="togglePassVisibility"
+                type="button"
+                onClick={() => setShowPassword(!showPassword)} // Toggle password visibility
+              >
+                {showPassword ? <BiHide className="toggleIcon"/> : <BiShow className="toggleIcon"/>}
+              </button>
+
           </div>
           <div className="buttonDiv">
             <button className="loginButton" type="submit">

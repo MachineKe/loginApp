@@ -4,19 +4,22 @@ import { useMutation } from "@apollo/react-hooks";
 import gql from "graphql-tag";
 import { useForm } from "./util/Hooks";
 import { AuthContext } from "./Context/auth";
-
+import { BiHide } from "react-icons/bi";
+import { BiShow } from "react-icons/bi";
 const Register = () => {
   const context = useContext(AuthContext);
   const navigate = useNavigate();
   const [errors, setErrors] = useState({});
+  const [showPassword, setShowPassword] = useState(false);
   const { onChange, onSubmit, values } = useForm(registerUser, {
+    fullname: "",
     username: "",
     email: "",
     phone: "",
     password: "",
     confirmPassword: "",
     gender: "", 
-    // yob: "",    
+    yob: "",    
   });
 
   const [addUser, { loading }] = useMutation(REGISTER_USER, {
@@ -50,6 +53,19 @@ const Register = () => {
         <h1>REGISTRATION PAGE</h1>
         <hr />
         <form action="" onSubmit={onSubmit}>
+                    <div className="inputDiv">
+            <label>Full Name</label>
+            <input
+              className="registerInput"
+              placeholder="FullName"
+              type="text"
+              required
+              name="fullname"
+              value={values.fullname}
+              onChange={onChange}
+            />
+          </div>
+
           <div className="inputDiv">
             <label>Username</label>
             <input
@@ -78,7 +94,7 @@ const Register = () => {
             <label>Phone</label>
             <input
               className="registerInput"
-              placeholder="+254"
+              placeholder="+"
               type="text"
               required
               name="phone"
@@ -91,24 +107,36 @@ const Register = () => {
             <input
               className="registerInput"
               placeholder="Password"
-              type="password"
+              type={showPassword ? "text" : "password"}
               required
               name="password"
               value={values.password}
               onChange={onChange}
             />
+            <button
+              className="togglePassVisibility"
+                type="button"
+                onClick={() => setShowPassword(!showPassword)} // Toggle password visibility
+              >
+                {showPassword ? <BiHide className="toggleIcon"/> : <BiShow className="toggleIcon"/>}
+              </button>
           </div>
           <div className="inputDiv">
             <label>Confirm Password</label>
             <input
               className="registerInput"
               placeholder="Confirm Password"
-              type="password"
+              type={showPassword ? "text" : "password"}
               required
               name="confirmPassword"
               value={values.confirmPassword}
               onChange={onChange}
             />
+            <button className="togglePassVisibility" type="button"
+              onClick={() => setShowPassword(!showPassword)}>
+                              {showPassword ? <BiHide className="toggleIcon"/> : <BiShow className="toggleIcon"/>}
+
+            </button>
           </div>
           <div className="inputDiv">
             <label>Gender</label>
@@ -136,7 +164,7 @@ const Register = () => {
             </div>
           </div>
           {/* Year of Birth Selection */}
-          {/* <div className="inputDiv">
+          <div className="inputDiv">
             <label>Year of Birth</label>
             <select
               className="registerInput"
@@ -149,7 +177,7 @@ const Register = () => {
                 <option key={year} value={year}>{year}</option>
               ))}
             </select>
-          </div> */}
+          </div>
           <div className="buttonDiv">
             <button className="registerButton" type="submit">
               Register
@@ -178,23 +206,25 @@ const Register = () => {
 
 const REGISTER_USER = gql`
   mutation register(
+    $fullname: String!
     $username: String!
     $email: String!
     $phone: String!
     $password: String!
     $confirmPassword: String!
     $gender: String!   
-    # $yob: Int!         
+    $yob: String!         
   ) {
     register(
       registerInput: {
+        fullname: $fullname
         username: $username
         email: $email
         phone: $phone
         password: $password
         confirmPassword: $confirmPassword
         gender: $gender   
-        # yob: $yob         
+        yob: $yob         
       }
     ) {
       id
@@ -202,6 +232,9 @@ const REGISTER_USER = gql`
       phone
       username
       gender
+      yob
+      fullname
+      age
       createdAt
       token
     }

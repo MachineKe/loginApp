@@ -10,11 +10,13 @@ const {
 
 function generateToken(user) {
   return jwt.sign({
+    fullname: user.fullname,
     id: user.id,
     email: user.email,
     username: user.username,
     gender: user.gender,
-    // yob: user.yob,
+    yob: user.yob,
+    age: user.age,
   },
     SECRET_KEY,
   {expiresIn: "1h"}
@@ -52,7 +54,7 @@ module.exports = {
     },
     async register(
       _,
-      {registerInput: {username,email,phone,password, confirmPassword,gender,yob}}
+      {registerInput: {username,email,phone,password, confirmPassword,gender,yob,fullname}}
     ) {
       // Validate user data
       const { valid, errors } = validateRegisterInput(
@@ -60,7 +62,8 @@ module.exports = {
         email,
         phone,
         password,
-        confirmPassword
+        confirmPassword,
+        fullname
       )
 
       if (!valid) {
@@ -96,10 +99,12 @@ module.exports = {
       password = await bcrypt.hash(password, 12)
       
       const newUser = new User({
+        fullname,
         email,
         phone,
         username,
-        // yob,
+        yob,
+        age: new Date().getFullYear() - parseInt(yob),
         gender,
         password,
         createdAt: new Date().toISOString(),

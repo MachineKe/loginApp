@@ -130,3 +130,13 @@ height: 80px;
 margin-top: 200px;
 margin-left: 140px;
 }
+
+.togglePassVisibility {
+  border: none;
+  background-color: transparent;
+  font-size: 30px;
+   transform: translateX(-100%);
+   position: absolute;
+}
+
+/* catalog */

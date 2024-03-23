@@ -1,19 +1,28 @@
 const { parsePhoneNumberFromString } = require('libphonenumber-js');
-
+const validator = require('validator');
 module.exports.validateRegisterInput = (
   username,
   email,
   phone,
   yob,
+  fullname,
   gender,
   password,
   confirmPassword
 ) => {
   const errors = {};
 
+
   if (username.trim() === "") {
     errors.username = "Username must not be empty";
   }
+     if (fullname.trim() === "") {
+    errors.fullname = "FullName must not be empty";
+   }
+   else if (!validator.isAlpha(fullname.replace(/\s/g, ''))) {
+    errors.fullname = "Full Name must contain only letters";
+  }
+
   if (yob.trim() === "") {
     errors.yob = "YOB must be selected";
   }

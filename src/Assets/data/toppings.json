@@ -1,0 +1,7 @@
+[
+  { "name": "Cheese", "price": 1.5, "imageUrl": "cheese.jpg" },
+  { "name": "Pepperoni", "price": 2, "imageUrl": "pepperoni.jpg" },
+  { "name": "Mushrooms", "price": 1.75, "imageUrl": "mushrooms.jpg" },
+  { "name": "Onions", "price": 1, "imageUrl": "onions.jpg" },
+  { "name": "Peppers", "price": 1.25, "imageUrl": "pepper.jpg" }
+]
