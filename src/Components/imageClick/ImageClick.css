@@ -5,7 +5,7 @@
   padding: 20px;
   background-color: #6A5ACD;
   color: white;
-  height: 100vh;
+  height:max-content;
 }
 
 .image-grid {
