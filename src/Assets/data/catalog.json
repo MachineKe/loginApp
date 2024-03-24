@@ -1,26 +1,26 @@
 [
   {
     "id": 1,
-    "title": "Item 1",
-    "description": "Description for item 1",
-    "imageUrl": "login.jpg"
+    "title": "Bugatti",
+    "description": "Bugatti is a prestigious car manufacturer known for producing high-performance sports cars and luxury vehicles. Established in 1909 by Ettore Bugatti, the company has a rich history of crafting exquisite automobiles with cutting-edge technology. Their models, such as the Veyron, are celebrated for their exceptional design and performance, making Bugatti a symbol of automotive excellence and luxury.",
+    "imageUrl": "bugatti.jpeg"
   },
   {
     "id": 2,
-    "title": "Item 2",
-    "description": "Description for item 2",
-    "imageUrl": "register.jpg"
+    "title": "Ferari",
+    "description": "Ferrari is an iconic Italian luxury sports car manufacturer known for its high-performance vehicles and racing heritage. Established in 1939 by Enzo Ferrari, the company has a rich history in Formula One racing and produces some of the most sought-after supercars in the world. Ferrari cars are renowned for their sleek design, powerful engines, and exhilarating performance, making them a symbol of prestige and automotive excellence.",
+    "imageUrl": "ferari.jpeg"
   },
   {
     "id": 3,
-    "title": "Item 3",
-    "description": "Description for item 3",
-    "imageUrl": "home.jpg"
+    "title": "Nissan Gtr",
+    "description": "The Nissan GT-R, often referred to simply as the GT-R, is a high-performance sports car produced by the Japanese automaker Nissan. First introduced in 2007, the GT-R quickly gained fame for its impressive performance capabilities and advanced technology. Known for its iconic design, powerful engine, and precise handling, the GT-R has become a symbol of Nissan's commitment to innovation and performance in the automotive industry. With its combination of speed, agility, and cutting-edge features, the GT-R continues to be a popular choice among sports car enthusiasts around the world.",
+    "imageUrl": "gtr.jpg"
   },
   {
     "id": 4,
-    "title": "Item 4",
-    "description": "Description for item 4",
-    "imageUrl": "home.jpg"
+    "title": "Lamborghini",
+    "description": "Lamborghini is an esteemed Italian luxury sports car manufacturer renowned for its high-performance vehicles and striking designs. Founded in 1963 by Ferruccio Lamborghini, the company has established itself as a prominent player in the automotive industry. Lamborghini cars are characterized by their bold styling, powerful engines, and exceptional handling, making them coveted by enthusiasts and collectors worldwide. With iconic models such as the Aventador and Huracán, Lamborghini continues to push the boundaries of automotive innovation while maintaining its reputation for luxury and exclusivity.",
+    "imageUrl": "lambo.jpg"
   }
 ]

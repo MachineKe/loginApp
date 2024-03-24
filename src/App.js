@@ -15,6 +15,8 @@ import Register from "./Components/Register";
 import About from "./Components/About";
 import Catalog from "./Components/Catalog/Catalog";
 import Pizza from "./Components/Pizza/Pizza";
+import ImageGallery from "./Components/imageClick/ImageClick";
+import Nav from "./Components/Nav/Nav";
 
 loadDevMessages();
 loadErrorMessages();
@@ -48,6 +50,7 @@ function App() {
       <ApolloProvider client={client}>
         <AuthProvider>
           <ErrorBoundary>
+<Nav/>
             <Routes>
                             <Route path="/" element={<Home/>} />
                             <Route path="/login" element={<Login/>} />
@@ -55,6 +58,7 @@ function App() {
               <Route path="/about" element={<About/>}/>
               <Route path="/catalog" element={<Catalog />} />
                            <Route path="/pizza" element={<Pizza/>}/>
+                           <Route path="/image" element={<ImageGallery/>}/>
 
             </Routes>
           </ErrorBoundary>

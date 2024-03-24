@@ -12,8 +12,7 @@ const Home = () => {
   useEffect(() => {
     const fetchAge = async () => {
       if (user) {
-        // Simulate fetching age from an asynchronous source (e.g., API)
-        await new Promise(resolve => setTimeout(resolve, 4000)); // Delay for 4 seconds
+        await new Promise(resolve => setTimeout(resolve, 0)); // Delay for 4 seconds
 
           setAge(user.age);
         }

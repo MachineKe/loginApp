@@ -1,0 +1,90 @@
+.pizza-container {
+  background-color: #6A5ACD;
+  color: white;
+  padding: 20px;
+    height: 100vh;
+
+}
+
+.title {
+  text-align: center;
+  color: white;
+}
+
+.toppings-container {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+}
+
+.topping {
+  margin: 10px;
+}
+
+.selected-toppings {
+  margin-top: 20px;
+}
+
+.selected-title {
+  text-align: center;
+}
+
+.selected-topping {
+  display: flex;
+  align-items: center;
+  margin: 10px;
+}
+
+.thumbnail {
+  width: 50px; /* Adjust size as needed */
+  height: 50px; /* Adjust size as needed */
+  margin-right: 10px;
+}
+
+.total-price {
+  text-align: center;
+  margin-top: 20px;
+}
+
+.buttons {
+  text-align: center;
+  margin-top: 20px;
+}
+
+button {
+  background-color: white;
+  color: purple;
+  border: none;
+  padding: 10px 20px;
+  margin: 5px;
+  cursor: pointer;
+}
+
+button:hover {
+  background-color: #f2f2f2;
+}
+
+.order-message {
+  position: fixed;
+  bottom: 20px;
+  left: 50%;
+  transform: translateX(-50%);
+  background-color: rgba(0, 0, 0, 0.8);
+  color: white;
+  padding: 10px 20px;
+  border-radius: 5px;
+  z-index: 9999;
+  animation: fadeOut 2s forwards;
+}
+
+@keyframes fadeOut {
+  0% {
+    opacity: 1;
+  }
+  100% {
+    opacity: 0;
+    visibility: hidden;
+  }
+}
+
+

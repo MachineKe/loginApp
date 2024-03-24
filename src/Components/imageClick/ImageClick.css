@@ -1,0 +1,50 @@
+.image-gallery-container {
+  font-family: Arial, sans-serif;
+  max-width: 800px;
+  margin: 0 auto;
+  padding: 20px;
+  background-color: #6A5ACD;
+  color: white;
+  height: 100vh;
+}
+
+.image-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
+  gap: 20px;
+}
+
+.image {
+  cursor: pointer;
+  border-radius: 8px;
+  overflow: hidden;
+  position: relative;
+}
+
+.responsive-image {
+  width: 100%;
+  height: auto;
+}
+
+.selected-image-text {
+  margin-top: 20px;
+}
+
+.selected-image {
+  font-weight: bold;
+}
+
+.clear-button {
+  background-color: white;
+  color: purple;
+  border: none;
+  padding: 10px 20px;
+  font-size: 16px;
+  border-radius: 5px;
+  cursor: pointer;
+  margin-top: 20px;
+}
+
+.clear-button:hover {
+  background-color: #eee;
+}
