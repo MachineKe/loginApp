@@ -6,7 +6,7 @@
   padding: 20px;
   background-color: #6A5ACD; /* Purple background */
   color: #fff; /* White text color */
-    height: 100vh;
+    height:max-content
 }
 
 .catalogue-items {
@@ -37,6 +37,7 @@
   justify-content: space-between;
   width: 100%;
   max-width: 400px; /* Adjust max-width as needed for responsiveness */
+    margin-bottom: 100px;
 }
 
 .nav-button {
