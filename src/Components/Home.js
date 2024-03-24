@@ -4,26 +4,31 @@ import { AuthContext } from "./Context/auth";
 import { MdOutlineExitToApp } from "react-icons/md";
 import { Link } from "react-router-dom";
 import Login from './Login';
+import { TfiReload } from "react-icons/tfi";
 
 const Home = () => {
   const { user, logout } = useContext(AuthContext);
   const [age, setAge] = useState(null);
+  const [loadingUserDetails, setLoadingUserDetails] = useState(true); // Add loading state
 
   useEffect(() => {
     const fetchAge = async () => {
       if (user) {
         await new Promise(resolve => setTimeout(resolve, 0)); // Delay for 4 seconds
-
-          setAge(user.age);
-        }
+        setAge(user.age);
+        setLoadingUserDetails(false); // Mark loading as false once age is set
       }
-  
+    }
 
     fetchAge();
-  }, [user, age]); // Include 'age' as dependency
+  }, [user]); // Remove 'age' as dependency
 
   const handleLogout = () => {
     logout();
+  };
+
+  const handleReload = () => {
+    window.location.reload(); // Reload the window
   };
 
   return (
@@ -31,14 +36,16 @@ const Home = () => {
       {user ? (
         <div className="container">
           <h1>UWL Login App</h1>
+          <button onClick={handleReload}><TfiReload /></button> {/* Handle reload on button click */}
           <p>Welcome {user.fullname}!</p>
           <h1>Your details in our system are:</h1>
           <p>Sex: {user.gender}</p>
-          {age ? (
-            <p>Age: {age}</p>
-          ) : (
+          {loadingUserDetails ? ( // Check loading state
             <p>Age: Loading...</p>
-          )}          <Link to="" className="link" onClick={handleLogout}>
+          ) : (
+            <p>Age: {age}</p>
+          )}
+          <Link to="" className="link" onClick={handleLogout}>
             <div className="logo2">
               <MdOutlineExitToApp />
               <p className="nameLogo">Logout</p>
@@ -53,7 +60,4 @@ const Home = () => {
 };
 
 export default Home;
-
-
-
 
