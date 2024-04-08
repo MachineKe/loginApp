@@ -52,13 +52,13 @@ function App() {
           <ErrorBoundary>
 <Nav/>
             <Routes>
-                            <Route path="/" element={<Home/>} />
+                            <Route path="/regApp" element={<Home/>} />
                             <Route path="/login" element={<Login/>} />
               <Route path="/register" element={<Register />} />
               <Route path="/about" element={<About/>}/>
               <Route path="/catalog" element={<Catalog />} />
                            <Route path="/pizza" element={<Pizza/>}/>
-                           <Route path="/image" element={<ImageGallery/>}/>
+                           <Route path="/" element={<ImageGallery/>}/>
 
             </Routes>
           </ErrorBoundary>

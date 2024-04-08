@@ -1,5 +1,5 @@
 module.exports = {
   MONGODB:
-    "mongodb+srv://venus:VenusNumber1@cluster0.z4xgovu.mongodb.net/?retryWrites=true&w=majority&appName=Cluster0",
+    "mongodb+srv://me:MambetMambetMambet@cluster0.z4xgovu.mongodb.net/?retryWrites=true&w=majority&appName=Cluster0",
   SECRET_KEY: "venus",
 };

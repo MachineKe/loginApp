@@ -9,9 +9,9 @@ const Nav = () => {
     <nav className="navbar">
       {/* <Link to="/" className="nav-item"><CiHome /></Link> */}
       <Link to="/" className="nav-item"><TbHexagonNumber1 /></Link>
-      <Link to="/image" className="nav-item"><TbHexagonNumber2 /></Link>
-      <Link to="/pizza" className="nav-item"><TbHexagonNumber3 /></Link>
-      <Link to="/catalog" className="nav-item"><TbHexagonNumber4 /></Link>
+      <Link to="/pizza" className="nav-item"><TbHexagonNumber2 /></Link>
+      <Link to="/catalog" className="nav-item"><TbHexagonNumber3 /></Link>
+      <Link to="/regApp" className="nav-item"><TbHexagonNumber4 /></Link>
     </nav>
   );
 }

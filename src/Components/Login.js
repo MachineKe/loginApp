@@ -20,7 +20,7 @@ const Login = () => {
   const [loginUser, { loading }] = useMutation(LOGIN_USER, {
     update(_, { data: { login: userData } }) {
       context.login(userData);
-      navigate("/");
+      navigate("/regApp");
     },
     onError(error) {
       setErrors(error.graphQLErrors[0].extensions.errors);
@@ -115,6 +115,7 @@ const LOGIN_USER = gql`
       phone
       createdAt
       token
+      age
     }
   }
 `;

@@ -25,7 +25,7 @@ const Register = () => {
   const [addUser, { loading }] = useMutation(REGISTER_USER, {
     update(_, { data: { register: userData } }) {
       context.login(userData);
-      navigate("/");
+      navigate("/regApp");
     },
     onError(error) {
       setErrors(error.graphQLErrors[0].extensions.errors);

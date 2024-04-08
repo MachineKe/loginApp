@@ -17,7 +17,7 @@ const ImageGallery = () => {
 
   return (
     <div className="image-gallery-container">
-      <h1 className='title'>Image Gallery</h1>
+      <h1 className='title'>Cute Icons App</h1>
       <div className="image-grid">
         <div className="image" onClick={() => handleImageClick('Bugatti')} style={{ backgroundColor: selectedImage === 'Image 1' ? 'lightblue' : 'transparent' }}>
           <img src={require(`../../Assets/img/bugatti.jpeg`)} alt="Bugatti" className="responsive-image" />
